@@ -1,27 +1,43 @@
-// import logo from './logo.svg';
-// import './App.css';
-
+// import React from "react";
+// import "./App.css";
+// import AvailableDestinations from "./Components/AvailableDestinations";
 // function App() {
+ 
 //   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
+//     <div className="app">
+//     <Switch>
+//       <Route exact path="/">
+//         {isAuthenticated ? <Redirect to= "/availabledestinations"/> : <LoginSignUpPage  setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>}
+//       </Route>
+//       <div>
+//         <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
+//         <div className="body">
+//           <Route exact path="/availabledestinations">
+//               {isAuthenticated ? <AvailableDestinations houses={filterHouses()} setSelectedState={setSelectedState} selectedState={selectedState} /> : <Redirect to="/"/>}
+//           </Route>
+//           <Route path="/userprofile">
+//             {isAuthenticated ? <UserProfile user={user}/> : <Redirect to="/"/>}
+//           </Route>
+//           <Route path="/myvisits">
+//             {isAuthenticated ? <MyVisits user={user} houses={houses}/> : <Redirect to="/"/>}
+//           </Route>
+//           <Route path="/myreviews">
+//             {isAuthenticated ? <MyReviews user={user} reviews={reviews} setReviews={setReviews} houses={houses}/>  : <Redirect to="/"/>}
+//           </Route>
+//           <Route path="/availablehouses/:id">
+//             {isAuthenticated ? <HouseProfile user={user}/>  : <Redirect to="/"/>}
+//           </Route>
+//         </div>
+//       </div>
+//     </Switch>
+//   </div>
 //   );
 // }
+
+
+// export default App;
 import { useState, useEffect } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,11 +49,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Page Count: {count}</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route path="/testing">
+            <h1>Test Route</h1>
+          </Route>
+          <Route path="/">
+            <h1>Page Count: {count}</h1>
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
-
 
 export default App;
