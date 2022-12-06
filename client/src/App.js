@@ -57,6 +57,7 @@ function App() {
           </Route>
           <Route path="/">
             <h1>Page Count: {count}</h1>
+            <h2>hii</h2>
           </Route>
         </Switch>
       </div>
