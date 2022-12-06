@@ -1,5 +1,4 @@
 class DestinationsController < ApplicationController
-    class DestinationsController < ApplicationController
         def index
             destinations = Destination.all
             render json: destinations
@@ -13,5 +12,5 @@ class DestinationsController < ApplicationController
           def house_params
             params.permit(:location, :description, :image, :name, :per_night)
           end
-    end
+    
 end
