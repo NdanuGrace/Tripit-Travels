@@ -4,15 +4,15 @@ puts "🌱 Seeding spices..."
 
 #create USERS
 puts 'Seeding users..'
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123")
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123" )
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123" )
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123")
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123")
+User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password: "123")
+User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password: "123" )
+User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password: "123" )
+User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password: "123")
+User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password: "123")
 User.create(name: "Ndanu", email: Faker::Internet.email, username:"Ndanu", password_digest: "123")
 
 
-# create destinations
+create destinations
 puts 'Seeding Houses..'
 Destination.create( location: "Malindi" , description: "Southern Palms Beach Resort is a 4-star facility set in Kenyas South Coast along Diani Beach. The resort offers an all-inclusive meal plan and it is thatched roof architecture can be seen next to the Diani Chale Marine National Reserve which offers diving and snorkeling", image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1600", name: "Southern Palms", per_night: '3000')
 Destination.create( location: "Diani" , description: "Diani Reef Beach Resort is a 5-star facility set on 34 acres next to Diani Beach. The resort has won several awards such as 2015s Africas leading spa resort which is a testament to the resorts quality.", image: "https://images.pexels.com/photos/2373201/pexels-photo-2373201.jpeg?auto=compress&cs=tinysrgb&w=1600", name: "Diani Reef", per_night: '2000')

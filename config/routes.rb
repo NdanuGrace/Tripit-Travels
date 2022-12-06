@@ -3,8 +3,14 @@ Rails.application.routes.draw do
   resources :visits
   resources :destinations, only: [:index, :show]
   resources :users
-  get '/hello', to: 'application#hello_world'
 
+
+  get '/authorized_user', to: 'users#show'
+  get '/visits/by_user/:id', to: 'visits#user_visits'
+  get '/reviews/by_user/:id', to: 'reviews#user_reviews' 
+
+post '/login', to: 'sessions#login'
+  delete '/logout', to: 'sessions#logout'
 
   get '*path',
   to: 'fallback#index',
