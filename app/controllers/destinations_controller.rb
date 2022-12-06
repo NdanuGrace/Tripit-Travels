@@ -7,7 +7,7 @@ class DestinationsController < ApplicationController
         
           def show
             destination = Destination.find(params[:id])
-            render json: destination
+            render json: destination, serializer: DestinationReviewSerializer, status: :ok
           end
     private
           def house_params
