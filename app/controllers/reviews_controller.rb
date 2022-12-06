@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
       private
     
       def review_params
-        params.permit(:content, :user_id, :house_id)
+        params.permit(:content, :user_id, :destination_id)
       end
     
 end
