@@ -1,16 +1,16 @@
 // import React from 'react';
 // import { Link } from 'react-router-dom';
 // function NavBar() {
-    // const history = useHistory()
-    // function handleLogout(){
-    //     fetch('/logout', {
-    //         method: 'DELETE',
-    //     }).then(() => {
-    //         setIsAuthenticated(false)
-    //         setUser(null)
-    //         history.push('/')
-    //     });
-    // }
+//     // const history = useHistory()
+//     // function handleLogout(){
+//     //     fetch('/logout', {
+//     //         method: 'DELETE',
+//     //     }).then(() => {
+//     //         setIsAuthenticated(false)
+//     //         setUser(null)
+//     //         history.push('/')
+//     //     });
+//     // }
 
 //     return (
 //         <div className='nav'>
