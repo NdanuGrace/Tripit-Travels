@@ -114,7 +114,7 @@ h2 {
   display: flex;
   /* flex: 10 10 500px; */
   flex-direction: column;
-  margin: 300px;
+  margin: 350px;
   margin-top: 30px;
   margin-bottom: 30px;
   -webkit-border-radius: 10px;
@@ -297,3 +297,87 @@ h1 {
   overflow: hidden; 
   border-radius: 0.25rem; 
 }
+/* loginform */
+.login-title {
+  text-align: center;
+  margin: 15px;
+  font-family: 'Bad Script', cursive;
+  font-size: 20px;
+  color: #150301;
+  opacity: 90%;
+}
+.login-form-box {
+  display:block;
+  left: 300px;
+  flex-direction: column;
+  justify-content: center;
+  width: 50px;
+  min-width: 30%;
+  height: 10vh;
+  margin: 10px;
+  padding: 5vw ;
+  position:relative;
+  background-color: rgba(253, 254, 255, 0.5);
+  opacity: 90%;
+  border-radius: 35%;
+}
+.login-form-box label {
+  display: block;
+  
+  text-align: center;
+  font-family: 'Sofia', sans-serif;
+  font-size: x-large;
+  color: rgb(247, 242, 242);
+  margin: 0 0 2vh 0;
+}
+.text-area{
+  width: 10px;
+}
+.login-form-box input, textarea {
+  display: block;
+  width: 100%;
+  padding: .5rem .8rem .5rem .8rem;
+  margin: .9vw 0 ;
+  border:0.5;
+  border-top-right-radius:10px;
+  border-bottom-left-radius:10px;
+  font-size: 20px;
+  font-family: 'Sofia', sans-serif;
+}
+.loginInputs:hover {
+  color:rgb(24, 116, 187);
+  transform: skew(-10deg);
+  border: 3px solid rgb(24, 116, 187);
+}
+.login-form-box textarea {
+  height: 15vh;
+}
+.login-button {
+margin: 10px;
+padding: 15px 30px;
+text-align: center;
+text-transform: uppercase;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;
+border-radius: 10px;
+display: block;
+border: 0px;
+font-weight: 700;
+box-shadow: 0px 0px 14px -7px #F09819;
+background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+cursor: pointer;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+.login-button:hover {
+background-position: right center;
+/* change the direction of the change here */
+color: #fff;
+text-decoration: none;
+}
+.login-button:active {
+transform: scale(0.95);
+}
+/* signupform */

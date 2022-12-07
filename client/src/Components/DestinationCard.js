@@ -9,8 +9,8 @@ function DestinationCard( { id, image, name, location, description, per_night}) 
             <div className='house-card' style={{backgroundImage: `url(${image})`}}>
                 <div className='button-div'>
                     <div className='content'>
-                        <Link to={`/destination/${id}`}>
-                            <button className='btn'>Show Details</button>
+                        <Link to={`/destinationprofile`}>
+                            <button className='btn'>MAKE BOOKING</button>
                         </Link>
                     </div>
                 </div>

@@ -1,19 +1,19 @@
 import React from 'react';
-// import LoginForm from './LoginForm.js';
-// import SignUpForm from './SignUpForm.js';
+import LoginForm from './LoginForm.js';
+import SignUpForm from './SignUpForm.js';
 
 
-function LoginSignupPage({ setUser, setIsAuthenticated }) {
+function LoginSignupPage({ onLogin}) {
 
     return (
         <div className='login-signup-page'>
             <div className='forms-div'>
                 <div className='login-form-div'>
-                    <LoginForm setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
+                    <LoginForm onLogin= {onLogin}  />
                 </div>
                 
                 <div className='signup-form-div'>
-                    <SignUpForm setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
+                    <SignUpForm onLogin={onLogin} />
                 </div>
             </div>
             

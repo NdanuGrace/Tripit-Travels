@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   get '/authorized_user', to: 'users#show'
   get '/visits/by_user/:id', to: 'visits#user_visits'
   get '/reviews/by_user/:id', to: 'reviews#user_reviews' 
+  post "/signup", to: "users#create"
 
-post '/login', to: 'sessions#login'
-  delete '/logout', to: 'sessions#logout'
+  post "/login", to: "sessions#create"
+  get "/me", to: "users#show"
+  delete "/logout", to: "sessions#destroy"
+
 
   get '*path',
   to: 'fallback#index',

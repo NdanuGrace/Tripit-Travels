@@ -26,7 +26,7 @@ useEffect(() =>{
     return (
         <div>
             <div className='houses-header-div'>
-                <h1>AVAILABLE DESTINATIONS</h1>
+                <h1>TRIPIT TRAVELS</h1>
             </div>
             <div className='selector-div'>
                 <label>

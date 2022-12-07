@@ -1,17 +1,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-function NavBar() {
+function NavBar({onLogout}) {
     // const history = useHistory()
-    // function handleLogout(){
-    //     fetch('/logout', {
-    //         method: 'DELETE',
-    //     }).then(() => {
-    //         setIsAuthenticated(false)
-    //         setUser(null)
-    //         history.push('/')
-    //     });
-    // }
+    function handleLogout() {
+        fetch("/logout", {
+          method: "DELETE",
+        }).then(() => onLogout());
+      }
 
     return (
         <div className='nav'>
@@ -19,14 +15,13 @@ function NavBar() {
             </div>
             <div className='links-div'>
                 <h1><Link to="/userprofile" className='nav-links'>PROFILE</Link></h1>
-                <h1><Link to="/destinationprofile" className='nav-links'>BOOKING</Link></h1>
 
                 <h1><Link to="/myvisits" className='nav-links'>MY VISITS</Link></h1>
                 <h1><Link to="/myreviews" className='nav-links'>MY REVIEWS</Link></h1>
                 <h1><Link to="/availabledestinations" className='nav-links'>AVAILABLE DESTINATIONS</Link></h1>
             </div>
             <div className="navLogoutDiv">
-                <button  className="navLogout"  >LOG OUT</button>
+                <button onClick={handleLogout} className="navLogout"  >LOG OUT</button>
             </div>
         </div>
     )
