@@ -1,21 +1,21 @@
 import React from 'react';
 import ReviewForm from './ReviewForm';
 
-function VisitCard({ visit, houses }) {
-    const {start_date, end_date, house_id, user_id} = visit
-    const houseVisit = houses.filter(house => house.id === house_id)
+function VisitCard({ visit, destinations }) {
+    const {start_date, end_date, destination_id, user_id} = visit
+    const destinationVisit = destinations.map(destination => destination.id === destination_id)
 
     return (
         <div className='visit-outer-div'>
-            <div className='visit-card' style={{backgroundImage: `url(${houseVisit[0].image}})`}}>
+            <div className='visit-card' style={{backgroundImage: `url(${destinationVisit[0].image}})`}}>
                 <div className='visit-form-div'>
                     <div className='visit-content'>
-                        <ReviewForm house_id={houseVisit[0].id} user_id={user_id} />
+                        <ReviewForm house_id={destinationVisit[0].id} user_id={user_id} />
                     </div>
                 </div>
                 <div className='visit-information-container'>
                     <div className='visit-info-div'>
-                        <h2 className='visit-title'>{houseVisit[0].location}</h2>
+                        <h2 className='visit-title'>{destinationVisit[0].location}</h2>
                         <div className='visit-more-information'>
                             <div className='from-and-to-container'>
                                 <div className='box from'>

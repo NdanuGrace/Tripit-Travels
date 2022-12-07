@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import UserProfile from "./Components/UserProfile";
 import MyReviews from "./Components/MyReviews";
 import MyVisits from "./Components/MyVisits";
 import AvailableDestinations from "./Components/AvailableDestinations";
 import NavBar from "./Components/NavBar";
+import DestinationProfile from "./Components/DestinationProfile";
 // import LoginSignupPage from "./Components/LoginSignupPage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -12,6 +13,43 @@ import "./App.css";
 
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [reviews, setReviews] = useState([])
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [destinations, setDestinations] = useState([])
+
+
+
+  useEffect(() => {
+    fetch('/authorized_user')
+    .then(r => {
+      if(r.ok){
+        r.json()
+        .then(user => {
+          setIsAuthenticated(true)
+          setUser(user)
+        })
+       .then (unlockDestinations)
+        .then(unlockReviews)
+      }
+    })
+  }, []);
+
+  const unlockDestinations = () => {
+    fetch('/destinations')
+    .then(r => r.json())
+    .then(data => setDestinations(data))
+    }
+  const unlockReviews = () => {
+    fetch(`reviews`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data))
+  }
+
+
+
+
+
   return (
 
 
@@ -19,14 +57,14 @@ function App() {
 
       <div>
         <Router>
-
           <NavBar />
           <Routes>
-          <Route exact path="/" element={<AvailableDestinations />}></Route>
-          {/* <Route exact path="/about" element={<About/>}></Route> */}
-          <Route  path="/myreviews" element={<MyReviews />}></Route>
+          <Route exact path="/" element={<AvailableDestinations  />}></Route>
+          <Route exact path="/destinationprofile" element={<DestinationProfile/>}></Route>
+
+          <Route  path="/myreviews" element={<MyReviews user={user} reviews={reviews} setReviews={setReviews} destinations={destinations} />}></Route>
           <Route  path="/myvisits" element={<MyVisits />}></Route>
-          <Route  path="/userprofile" element={<UserProfile />} ></Route>
+          <Route  path="/userprofile" element={<UserProfile user={user} />} ></Route>
           <Route  path="/availabledestinations" element={<AvailableDestinations />}></Route>
 
           </Routes>

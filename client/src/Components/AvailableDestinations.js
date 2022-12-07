@@ -1,12 +1,55 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
+import DestinationCard from './DestinationCard';
 
+function AvailableDestinations() {
+    const[destinations, setDestinations] = useState([])
 
-function AvailableDestinations(){
-return(
-    <div>
-        <h1>availabledestinations</h1>
-    </div>
-)
+useEffect(() =>{
+  fetch('/destinations')
+  .then(r => r.json())
+  .then(data => setDestinations(data))
+})
+
+    // const [selectedState, setSelectedState] = useState('All')
+    
+    // const filterHouses = () => {
+    //     if(selectedState === "All"){
+    //         return houses
+    //     } else {
+    //         return houses.filter(h => h.location.toLowerCase().includes(selectedState.toLowerCase()))
+    //     }
+    // }
+
+    // const test = filterHouses()
+
+    
+    return (
+        <div>
+            <div className='houses-header-div'>
+                <h1>AVAILABLE DESTINATIONS</h1>
+            </div>
+            <div className='selector-div'>
+                <label>
+                Select Location:
+      
+      
+                </label>
+            </div>
+            <div className='available-houses'>
+            {destinations.map((destination) => (
+          <DestinationCard
+            key={destination.id}
+            image={destination.image}
+            name={destination.name}
+            location={destination.location}
+            description= {destination.description}
+            per_night={destination.per_night}
+          />
+        
+      ))}
+            </div>
+        </div>
+    )
 }
 
-    export default AvailableDestinations;
+export default AvailableDestinations;

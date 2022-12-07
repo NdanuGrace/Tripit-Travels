@@ -18,7 +18,9 @@ function NavBar() {
             <div className='logo-div'>
             </div>
             <div className='links-div'>
-                <h1><Link to="/userprofile" className='nav-links'>PROFLE</Link></h1>
+                <h1><Link to="/userprofile" className='nav-links'>PROFILE</Link></h1>
+                <h1><Link to="/destinationprofile" className='nav-links'>BOOKING</Link></h1>
+
                 <h1><Link to="/myvisits" className='nav-links'>MY VISITS</Link></h1>
                 <h1><Link to="/myreviews" className='nav-links'>MY REVIEWS</Link></h1>
                 <h1><Link to="/availabledestinations" className='nav-links'>AVAILABLE DESTINATIONS</Link></h1>
