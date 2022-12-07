@@ -1,77 +1,76 @@
-// import React from "react";
-// import UserProfile from "./Components/UserProfile";
-// import MyReviews from "./Components/MyReviews";
-// import MyVisits from "./Components/MyVisits";
-// import NavBar from "./Components/NavBar";
-// // import LoginPage from "./Components/LoginPage";
-// import { Route, Router} from 'react-router-dom';
+import React from "react";
+import UserProfile from "./Components/UserProfile";
+import MyReviews from "./Components/MyReviews";
+import MyVisits from "./Components/MyVisits";
+import AvailableDestinations from "./Components/AvailableDestinations";
+import NavBar from "./Components/NavBar";
+// import LoginSignupPage from "./Components/LoginSignupPage";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// // // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import AvailableDestinations from "./Components/AvailableDestination";
-// import "./App.css";
-
-
-// function App(){
-//   return(
-
-//     <div className='App'>
-
-//       <div>
-//         <Router>
-//           <div>
-         
-//        <NavBar/>
-//       </div>
-      
-//       <Route exact path="/" element={<AvailableDestinations/>}></Route>
-//       {/* <Route exact path="/about" element={<About/>}></Route> */}
-//             <Route exact path="/myreviews" element={<MyReviews/>}></Route>
-//       <Route exact path="/myvisits" element={<MyVisits/>}></Route> 
-//       <Route exact path="/userprofile" element={<UserProfile />} ></Route>
-//       <Route exact path="/availabledestinations" element={<AvailableDestinations />}></Route> 
- 
-      
-//       </Router>
-//       </div>
- 
+// // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
 
 
-// //   </div>
-//   )
-   
-  
-// }
+function App() {
+  return (
+
+
+    <div className='App'>
+
+      <div>
+        <Router>
+
+          <NavBar />
+          <Routes>
+          <Route exact path="/" element={<AvailableDestinations />}></Route>
+          {/* <Route exact path="/about" element={<About/>}></Route> */}
+          <Route  path="/myreviews" element={<MyReviews />}></Route>
+          <Route  path="/myvisits" element={<MyVisits />}></Route>
+          <Route  path="/userprofile" element={<UserProfile />} ></Route>
+          <Route  path="/availabledestinations" element={<AvailableDestinations />}></Route>
+
+          </Routes>
+        </Router>
+      </div>
+
+
+
+    </div>
+  )
+
+
+}
 // const [isAuthenticated, setIsAuthenticated] = useState(false);
 //   const [user, setUser] = useState(null);
 //   const [houses, setHouses] = useState([])
 //   const [reviews, setReviews] = useState([])
 //   const [selectedState, setSelectedState] = useState('All')
 
-//   // useEffect(() => {
-//   //   fetch('/authorized_user')
-//   //   .then(r => {
-//   //     if(r.ok){
-//   //       r.json()
-//   //       .then(user => {
-//   //         setIsAuthenticated(true)
-//   //         setUser(user)
-//   //       })
-//   //       .then(unlockHouses)
-//   //       .then(unlockReviews)
-//   //     }
-//   //   })
-//   // }, []);
+//   useEffect(() => {
+//     fetch('/authorized_user')
+//     .then(r => {
+//       if(r.ok){
+//         r.json()
+//         .then(user => {
+//           setIsAuthenticated(true)
+//           setUser(user)
+//         })
+//         .then(unlockHouses)
+//         .then(unlockReviews)
+//       }
+//     })
+//   }, []);
 
-//   // const unlockHouses = () => {
-//   //   fetch('/destinations')
-//   //   .then(r => r.json())
-//   //   .then(data => setHouses(data))
-//   //   }
-//   // const unlockReviews = () => {
-//   //   fetch(`http://localhost:3000/reviews/${user.id}`)
-//   //     .then((res) => res.json())
-//   //     .then((data) => setReviews(data))
-//   // }
+//   const unlockHouses = () => {
+//     fetch('/destinations')
+//     .then(r => r.json())
+//     .then(data => setHouses(data))
+//     }
+//   const unlockReviews = () => {
+//     fetch(`http://localhost:3000/reviews/${user.id}`)
+//       .then((res) => res.json())
+//       .then((data) => setReviews(data))
+//   }
 
 //   const filterHouses = () => {
 //     if(selectedState === "All"){
@@ -81,12 +80,12 @@
 //     }
 // }
 
-//   if(!isAuthenticated) return <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
+//   if(!isAuthenticated) return <  LoginSignupPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 //   return (
 //       <div className="app">
 //         <Switch>
 //           <Route exact path="/">
-//             {isAuthenticated ? <Redirect to= "/availabledestinations"/> : <LoginPage  setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>}
+//             {isAuthenticated ? <Redirect to= "/availabledestinations"/> : < LoginSignupPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>}
 //           </Route>
 //           <div>
 //             <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
@@ -112,4 +111,4 @@
 //       </div>
 //   );
 // }
-// export default App;
+export default App;
