@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import UserProfile from "./Components/UserProfile";
 import MyReviews from "./Components/MyReviews";
 import MyVisits from "./Components/MyVisits";
+
 import AvailableDestinations from "./Components/AvailableDestinations";
 import NavBar from "./Components/NavBar";
 import DestinationProfile from "./Components/DestinationProfile";
