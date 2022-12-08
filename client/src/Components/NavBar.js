@@ -1,13 +1,15 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-function NavBar({onLogout}) {
     // const history = useHistory()
-    function handleLogout() {
-        fetch("/logout", {
-          method: "DELETE",
-        }).then(() => onLogout());
-      }
+    function NavBar({ user, setUser }) {
+        function handleLogoutClick() {
+          fetch("/logout", { method: "DELETE" }).then((r) => {
+            if (r.ok) {
+              setUser(null);
+            }
+          });
+        }
 
     return (
         <div className='nav'>
@@ -21,7 +23,7 @@ function NavBar({onLogout}) {
                 <h1><Link to="/availabledestinations" className='nav-links'>AVAILABLE DESTINATIONS</Link></h1>
             </div>
             <div className="navLogoutDiv">
-                <button onClick={handleLogout} className="navLogout"  >LOG OUT</button>
+                <button  onClick={handleLogoutClick} className="navLogout"  >LOG OUT</button>
             </div>
         </div>
     )

@@ -52,7 +52,7 @@ function App() {
 
       <div>
         <Router>
-          <NavBar />
+          <NavBar user={user} setUser={setUser} />
           <Routes>
           <Route exact path="/" element={<AvailableDestinations  />}></Route>
           <Route exact path="/destinationprofile" element={<DestinationProfile/>}></Route>

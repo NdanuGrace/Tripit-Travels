@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize, only: [:create, :index]
+  before_action :authorize
+  skip_before_action :authorize, only: [:index, :create]
+  # rescue_from ActiveRecord::RecordInvalid, with: :valid_user
+
 
   def index
     render json: User.all, status: :ok
@@ -7,21 +10,15 @@ class UsersController < ApplicationController
 
   def show
     user = User.find_by(id: session[:user_id])
-    if user
-      render json: user
-    else
-      render json: { error: "Not authorized" }, status: :unauthorized
-    end
+        session[:user_id] = user.id
+        render json: user
   end
 
-    def create
-      user = User.create(user_params)
-      if user.valid?
-        render json: user, status: :created
-      else
-        render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
-      end
-    end
+  def create
+    user = User.create!(user_params)
+    session[:user_id] = user.id
+    render json: user, status: :created
+end
 
   def update
     user = User.find(params[:id])
@@ -37,9 +34,15 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :username, :email, :password_digest)
+    params.permit(:name, :username, :email, :password, :password_confirmation)
 
   end
+  def authorize
+    return render json:{error:"Not authorized"}, status: :unauthorized unless session.include? :user_id
+  end
+#   def valid_user(valid)
+#     render json:{errors: valid.record.errors.full_messages}, status: :unprocessable_entity
+# end
 
 end
 

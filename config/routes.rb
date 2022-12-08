@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
   get '/authorized_user', to: 'users#show'
-  get '/visits/by_user/:id', to: 'visits#user_visits'
+  get '/visits/by_user/:id', to: 'visits#show'
   get '/reviews/by_user/:id', to: 'reviews#user_reviews' 
   post "/signup", to: "users#create"
 

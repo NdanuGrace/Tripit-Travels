@@ -7,6 +7,9 @@ function SignUpForm({ onLogin }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState([]);
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,8 +26,14 @@ function SignUpForm({ onLogin }) {
         password_confirmation: passwordConfirmation,
       }),
     })
-      .then((r) => r.json())
-      .then(onLogin);
+      .then((r) => {
+        setIsLoading(false);
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });  
   }
 
   return (
@@ -66,7 +75,7 @@ function SignUpForm({ onLogin }) {
         value={passwordConfirmation}
         onChange={(e) => setPasswordConfirmation(e.target.value)}
       />
-      <button type="submit">Submit</button>
+      <button className="signup-button" type="submit">Submit</button>
     </form>
     </div>
   );

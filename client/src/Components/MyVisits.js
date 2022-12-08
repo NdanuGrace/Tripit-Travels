@@ -6,13 +6,13 @@ function MyVisits({ user, destinations }) {
     const [visits, setVisits] = useState([])
 
     useEffect(() => {
-        fetch(`/visits/`)
+        fetch(`/visits`)
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => setVisits(data))
     },[])
     
 
-    const renderVisits = visits.map(visit => <VisitCard visit={visit} key={visit.id} destinations={destinations} user={user} />)
+    // const renderVisits = visits.map(visit => <VisitCard visit={visit} key={visit.id} destinations={destinations} user={user} />)
 
     return(
         <div>
@@ -20,7 +20,15 @@ function MyVisits({ user, destinations }) {
                 <h1>MY VISITS</h1>
             </div>
             <div className='all-my-visits'>
-                {renderVisits}
+            {visits.map((visit) => (
+          <VisitCard
+            key={visit.id}
+           start_date = {visit.start_date}
+           end_date = {visit.end_date}
+           destinations = {destinations}
+          />
+        
+      ))}
             </div>
         </div>
     )

@@ -313,13 +313,13 @@ h1 {
   justify-content: center;
   width: 50px;
   min-width: 30%;
-  height: 10vh;
+  height: 300px;
   margin: 10px;
   padding: 5vw ;
   position:relative;
-  background-color: rgba(253, 254, 255, 0.5);
+  background-color:  rgba(249, 230, 222, 0.5);
   opacity: 90%;
-  border-radius: 35%;
+  border-radius: 20%;
 }
 .login-form-box label {
   display: block;
@@ -327,7 +327,7 @@ h1 {
   text-align: center;
   font-family: 'Sofia', sans-serif;
   font-size: x-large;
-  color: rgb(247, 242, 242);
+  color: rgb(12, 12, 12);
   margin: 0 0 2vh 0;
 }
 .text-area{

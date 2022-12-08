@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-        skip_before_action :authorize, only: :create
+        # skip_before_action :authorize, only: :create, :destroy
       
 
         def create
@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             render json: user, status: :created
           else
-            render json: { error: "Invalid username or password" }, status: :unauthorized
+            render json: {errors: ["Not authorized"]}, status: :unauthorized
           end
-        end
+      end
 
         def destroy
           return render json: {errors:["Not authorized"]}, status: :unauthorized unless session.include? :user_id
           session.delete :user_id
-          head :no_content 
+          render json: {} 
         end
       
   
