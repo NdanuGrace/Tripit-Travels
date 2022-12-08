@@ -259,7 +259,7 @@ h2 {
 h1 {
   font-family: 'Bad Script', cursive;
   font-size: 50px;
-  color: #e85a4f;
+  color: #044a10;
   opacity: 90%;
 }
 
@@ -307,19 +307,19 @@ h1 {
   opacity: 90%;
 }
 .login-form-box {
+  top: 150px;
   display:block;
-  left: 300px;
+  left: 450px;
   flex-direction: column;
   justify-content: center;
-  width: 50px;
-  min-width: 30%;
+  width: 30px;
+  min-width: 27%;
   height: 300px;
   margin: 10px;
   padding: 5vw ;
   position:relative;
-  background-color:  rgba(249, 230, 222, 0.5);
+  background-color:  rgba(87, 127, 89, 0.5);
   opacity: 90%;
-  border-radius: 20%;
 }
 .login-form-box label {
   display: block;
@@ -364,8 +364,8 @@ border-radius: 10px;
 display: block;
 border: 0px;
 font-weight: 700;
-box-shadow: 0px 0px 14px -7px #F09819;
-background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+box-shadow: 0px 0px 14px -7px #98a797;
+background-image: linear-gradient(45deg, #056306 0%, #4e6a02  51%, #f8f0ee  100%);
 cursor: pointer;
 user-select: none;
 -webkit-user-select: none;
@@ -383,15 +383,17 @@ transform: scale(0.95);
 /* signupform */
 .signup-form-box {
   display: flex;
-  left: 300px;
+  left: 500px;
+  top: 50px;
+  background-color:  rgba(87, 127, 89, 0.5);
+
   flex-direction: column;
   justify-content: center;
   width: 300px;
-  height: 400px;
+  height: 460px;
   margin: 10px;
   padding: 5vw ;
   position:relative;
-  background-color: rgba(249, 230, 222, 0.5);
   opacity: 90%;
   border-radius: 10px;
 }
@@ -400,7 +402,7 @@ transform: scale(0.95);
   margin: 15px;
   font-family: 'Bad Script', cursive;
   font-size: 40px;
-  color: #590303;
+  color: #3d4405;
   opacity: 90%;
 }  min-width: 10%;
 
@@ -443,8 +445,8 @@ transform: scale(0.95);
   display: block;
   border: 0px;
   font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #F09819;
-  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  box-shadow: 0px 0px 14px -7px #125722;
+  background-image: linear-gradient(45deg, #056306 0%, #4e6a02  51%, #f8f0ee  100%);
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -458,4 +460,79 @@ transform: scale(0.95);
 }
 .signup-button:active {
   transform: scale(0.95);
+}
+.copyright{
+  font-size: 20px;
+  margin-top: 200px;
+}
+
+/* booking */
+.name{
+  text-align: center;
+  /* margin-right: -35rem; */
+} 
+.information{
+  display: flex;
+  flex-direction: row;
+}
+.booking{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+.details{
+  width: 20rem;
+  margin-left: 5rem;
+}
+.book-visit{
+  margin-left: 300px;
+}
+.book{
+  height: 200px;
+  margin: 10px;
+  padding: 5vw ;
+  position:relative;
+  background-color: rgba(211, 212, 211, 0.5);
+  opacity: 90%; 
+}
+
+.date{
+font-size: 25px;
+margin-right: 30px;
+
+}
+.book-btn{
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(250, 251, 248);
+  border-radius: 10px;
+  display: block;
+  background-image: linear-gradient(45deg, #056306 0%, #4e6a02  51%, #f8f0ee  100%);
+  border: 0px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+h4{
+  margin-top: 100px;
+  font-size: 35px;
+margin-left: 600px;
+color: #044a10;
+}
+.account{
+  margin-left: 500px;
+  margin-top: 200px;
+  font-size: 25px;
+}
+.sign{
+  margin-left: 500px;
+  margin-top: 80px;
+  font-size: 25px;
 }

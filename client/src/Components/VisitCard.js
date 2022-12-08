@@ -1,7 +1,7 @@
 import React from 'react';
 
 function VisitCard({ start_date, end_date, destinations }) {
-    const destinationVisit = destinations.map(destination => destination === destination)
+    const destinationVisit = destinations.map(destination => destination.id === destination.id)
 
     return (
         <div className='visit-outer-div'>

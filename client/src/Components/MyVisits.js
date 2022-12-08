@@ -6,7 +6,7 @@ function MyVisits({ user, destinations }) {
     const [visits, setVisits] = useState([])
 
     useEffect(() => {
-        fetch(`/visits`)
+        fetch(`/visits/by_user/${user.id}`)
         .then(r => r.json())
         .then(data => setVisits(data))
     },[])

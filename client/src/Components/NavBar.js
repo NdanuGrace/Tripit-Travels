@@ -21,10 +21,13 @@ import { Link } from 'react-router-dom';
                 <h1><Link to="/myvisits" className='nav-links'>MY VISITS</Link></h1>
                 <h1><Link to="/myreviews" className='nav-links'>MY REVIEWS</Link></h1>
                 <h1><Link to="/availabledestinations" className='nav-links'>AVAILABLE DESTINATIONS</Link></h1>
+
             </div>
             <div className="navLogoutDiv">
                 <button  onClick={handleLogoutClick} className="navLogout"  >LOG OUT</button>
             </div>
+            <p class="copyright">Tripit Travels © 2022</p>
+
         </div>
     )
 }

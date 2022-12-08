@@ -10,6 +10,7 @@ function LoginSignupPage({ onLogin }) {
     return (
 
         <div className='login-signup-page'>
+            <h4>TRIPIT TRAVELS</h4>
             <div className='forms-div'>
 
                 {showLogin ? (
@@ -18,9 +19,9 @@ function LoginSignupPage({ onLogin }) {
 
                         <LoginForm onLogin={onLogin} />
                         <div />
-                        <p>
+                        <p className='account'>
                             Don't have an account? &nbsp;
-                            <button color="secondary" onClick={() => setShowLogin(false)}>
+                            <button className='book-btn' color="secondary" onClick={() => setShowLogin(false)}>
                                 Sign Up
                             </button>
                         </p>
@@ -30,9 +31,9 @@ function LoginSignupPage({ onLogin }) {
 
                         <SignUpForm onLogin={onLogin} />
 
-                        <p>
+                        <p className='sign'>
                             Already have an account? &nbsp;
-                            <button color="secondary" onClick={() => setShowLogin(true)}>
+                            <button  className='book-btn' color="secondary" onClick={() => setShowLogin(true)}>
                                 Log In
                             </button>
                         </p>
