@@ -8,7 +8,7 @@ useEffect(() =>{
   fetch('/destinations')
   .then(r => r.json())
   .then(data => setDestinations(data))
-})
+},[])
 
     // const [selectedState, setSelectedState] = useState('All')
     

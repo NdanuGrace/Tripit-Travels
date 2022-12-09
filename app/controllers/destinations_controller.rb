@@ -1,4 +1,5 @@
 class DestinationsController < ApplicationController
+  skip_before_action :authorize
         def index
             destinations = Destination.all
             render json: destinations
