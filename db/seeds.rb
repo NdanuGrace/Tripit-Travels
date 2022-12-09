@@ -4,12 +4,12 @@ puts "🌱 Seeding spices..."
 
 #create USERS
 puts 'Seeding users..'
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123")
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123" )
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123" )
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123")
-User.create(name: Faker::Name.first_name, email: Faker::Internet.email, username: Faker::Internet.username, password_digest: "123")
-User.create(name: "Ndanu", email: Faker::Internet.email, username:"Ndanu", password_digest: "123")
+User.create(
+  name: 'John Doe',
+  email: 'john@gmail.com',
+  username: 'john',
+  password: '123'
+)
 
 
 # create destinations

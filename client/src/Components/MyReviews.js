@@ -15,8 +15,9 @@ function MyReviews({ user, destinations }) {
       .then((data) => setReviews(data))
   },[])
 
-  const deleteReview = (review) => {
-    fetch(`/reviews/`,{
+
+ const deleteReview = (review) => {
+    fetch(`/reviews/${review.id}`,{
       method: 'DELETE'
     })
       .then((res) => res.json())
@@ -34,10 +35,11 @@ function MyReviews({ user, destinations }) {
         <h3>{destinations.map(destination => destination.id === review.destination_id ? destination.name : null)}:</h3>
         <ReviewCard
           key={review.id}
-          review= {review.content}
+          content= {review.content}
           reviewInput={reviewInput}
           setReviewInput={setReviewInput}
           starInput={starInput}
+          deleteReview = {deleteReview}
           setStarInput={setStarInput}
           reviewEditInput={reviewEditInput}
           setReviewEditInput={setReviewEditInput}

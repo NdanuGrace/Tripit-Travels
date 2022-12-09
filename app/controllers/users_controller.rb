@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize, only: [:index, :create]
-  # rescue_from ActiveRecord::RecordInvalid, with: :valid_user
-
-
-  # def index
-  #   render json: User.all, status: :ok
-  # end
+  skip_before_action :authorize, only: [:create]
+ 
 
   def show
-    render json: @current_user
+    render json: status: :ok
 end
 
   def create
@@ -17,10 +12,7 @@ end
     render json: user, status: :created
 end
 
-  # def update
-  #   user = User.find(params[:id])
-  #   render json: user.update!(user_params), status: :created
-  # end
+ 
   def update
     @current_user.update!(user_params)
     render json: @current_user
@@ -39,9 +31,6 @@ end
 
   end
 
-#   def valid_user(valid)
-#     render json:{errors: valid.record.errors.full_messages}, status: :unprocessable_entity
-# end
 
 end
 

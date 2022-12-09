@@ -1,15 +1,15 @@
 import React from 'react';
 
-function VisitCard({ start_date, end_date, destinations }) {
-    const destinationVisit = destinations.map(destination => destination.id === destination.id)
+function VisitCard({ start_date, end_date }) {
+    // const destinationVisit = destinations.map(destination => destination === destination)
 
     return (
         <div className='visit-outer-div'>
-            <div className='visit-card' style={{backgroundImage: `url(${destinationVisit[0].image}})`}}>
+            {/* <div className='visit-card' style={{backgroundImage: `url(${destinationVisit[0].image}})`}}>
               
                  <div className='visit-information-container'>
                     <div className='visit-info-div'>
-                        <h2 className='visit-title'>{destinationVisit[0].location}</h2> 
+                        <h2 className='visit-title'>{destinationVisit[0].location}</h2>  */}
                         <div className='visit-more-information'>
                             <div className='from-and-to-container'>
                                 <div className='box from'>

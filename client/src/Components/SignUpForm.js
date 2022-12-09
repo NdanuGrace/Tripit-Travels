@@ -7,7 +7,6 @@ function SignUpForm({ onLogin }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState([]);
 
 
@@ -23,17 +22,18 @@ function SignUpForm({ onLogin }) {
         username,
         email,
         password,
-        password_confirmation: passwordConfirmation,
+        password_confirmation :passwordConfirmation
       }),
     })
-      .then((r) => {
-        setIsLoading(false);
+    .then(
+      (r) => {
         if (r.ok) {
           r.json().then((user) => onLogin(user));
         } else {
           r.json().then((err) => setErrors(err.errors));
         }
-      });  
+      }
+    )
   }
 
   return (

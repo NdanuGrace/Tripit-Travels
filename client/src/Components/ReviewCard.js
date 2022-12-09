@@ -11,12 +11,14 @@ function ReviewCard({
     setReviewEditInput,
     setStarEditInput,
     starEditInput,
+    destinations
   }) {
     const [displayEdit, setDisplayEdit] = useState(false);
 
     
 return (
     <div className="review-card-outer-div">
+      <h2>Reviews</h2>
       <h3>{content}</h3>
       {/* <h3>{star_rating}</h3> */}
       <button className="btnEdit" onClick={() => setDisplayEdit(!displayEdit)}>edit</button>

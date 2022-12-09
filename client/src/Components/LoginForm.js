@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
 const[password, setPassword] = useState("")
-
+const[errors, setErrors]= useState("")
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,8 +17,15 @@ const[password, setPassword] = useState("")
         password
        }),
     })
-      .then((r) => r.json())
-      .then((user) => onLogin(user));
+    .then(
+      (r) => {
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      }
+    )
   }
 
   return (
@@ -41,6 +48,10 @@ const[password, setPassword] = useState("")
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className='login-button' type="submit">Login</button>
+        {
+          errors ? errors.map((error) => <p style={{color: 'red'}}>{error}</p>) : null
+        }
+        
       </form>
     </div>
   );

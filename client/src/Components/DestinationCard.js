@@ -22,7 +22,7 @@ function DestinationCard( { id, image, name, location, description, per_night}) 
                             <div className='ratings-and-price-container'>
                                
                                 <div className='box price'>
-                                    <p>${per_night}/per night</p>
+                                    <p>ksh:{per_night}/per night</p>
                                 </div>
                             </div>
                             <p className='description'>{description}</p>

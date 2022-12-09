@@ -21,7 +21,7 @@ Ruby on Rails - Backend
 
 
 
-Example user Ndanu, Password 123
+Example user john, Password 123
 
 
 

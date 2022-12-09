@@ -1,5 +1,4 @@
 class VisitsController < ApplicationController
-  skip_before_action :authorize
 
     def index
         visit = Visit.all
