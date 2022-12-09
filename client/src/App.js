@@ -15,7 +15,6 @@ import LoginSignupPage from "./Components/LoginSignupPage";
 function App() {
   const [user, setUser] = useState(null);
   const [reviews, setReviews] = useState([])
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [destinations, setDestinations] = useState([])
 
 
@@ -26,12 +25,16 @@ function App() {
       }
     });
   }, []);
+  useEffect(() => {
+    fetch("/destinations").then((response) => {
+      if (response.ok) {
+        response.json().then((data) => setDestinations(data));
+      }
+    });
+  }, []);
 
-  const unlockDestinations = () => {
-    fetch('/destinations')
-    .then(r => r.json())
-    .then(data => setDestinations(data))
-    }
+ 
+  
   const unlockReviews = () => {
     fetch(`reviews`)
       .then((res) => res.json())
@@ -58,7 +61,7 @@ function App() {
           <Route exact path="/destinationprofile" element={<DestinationProfile/>}></Route>
 
           <Route  path="/myreviews" element={<MyReviews user={user} reviews={reviews} setReviews={setReviews} destinations={destinations} />}></Route>
-          <Route  path="/myvisits" element={<MyVisits />}></Route>
+          <Route  path="/myvisits" element={<MyVisits user={user} destinations={destinations} />}></Route>
           <Route  path="/userprofile" element={<UserProfile user={user} />} ></Route>
           <Route  path="/availabledestinations" element={<AvailableDestinations />}></Route>
 
