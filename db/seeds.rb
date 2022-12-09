@@ -40,7 +40,7 @@ end
 
 puts 'Seeding Visits..'
 # Visit.create(date: "12/12/2020", user_id:second.id, house_id: house7.id)
-10.times do 
+6.times do 
   Visit.create(
     start_date: Faker::Date.between(from: '2020-01-01', to: '2022-05-31'),
     destination_id: rand(1..Destination.all.size),
