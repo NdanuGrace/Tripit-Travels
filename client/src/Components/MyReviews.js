@@ -16,7 +16,7 @@ function MyReviews({ user, destinations }) {
   },[])
 
   const deleteReview = (review) => {
-    fetch(`/reviews/${review.id}`,{
+    fetch(`/reviews/`,{
       method: 'DELETE'
     })
       .then((res) => res.json())
