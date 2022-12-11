@@ -23,7 +23,9 @@ Ruby on Rails - Backend
 
 Example user john, Password 123
 
+Link to video of project
 
+https://drive.google.com/file/d/1IV_9Tj1JS6C48j5kiumifFmXaNgjcTWo/view?usp=sharing
 
 
 
