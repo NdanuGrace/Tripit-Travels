@@ -17,7 +17,7 @@ STEPS
 
 Languages used
 Html, Css, React - Front end
-Ruby on Rails - Backend 
+
 
 
 
