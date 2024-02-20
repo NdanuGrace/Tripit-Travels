@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  private:
+    image: ghcr.io/Tripit_travels
+    # build: .
+    container_name: Tripit-App
+    volumes:
+      - '/app'
+      - '/app/node_modules'
+      # - '.:/app'
+    ports:
+      - 3101:3101
+    environment:
+      - CHOKIDAR_USEPOLLING=true
