@@ -19,4 +19,4 @@ RUN pnpm run build
 
 EXPOSE 3009
 # CMD [ "npm", "run", "start:prod" ]
-CMD [ "node", "dist/main" ] 
+CMD [ "node", "client/src/main" ] 
